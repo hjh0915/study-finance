@@ -15,3 +15,29 @@
 
 一个客户可以多次购买理财产品，但是每一笔赎回只针对一个理财产品的购买。
 需要针对一个购买产品，进行四种不同方式的赎回分析。
+
+赎回属性类型
+-------
+OrganCode
+TranDate                datetime
+TranTime                string
+ApplicationCode
+TaCode
+ProdCode
+TradeQuot               Decimal
+TradeCode
+RegeemSequence          int
+AppiontApplicationCode
+
+*购买属性类型同上类似*
+
+购买中的需求
+==========
+1、赎回交易时存在先进先出、后进先出方式，在处理购买记录时需要排序
+2、赎回交易时存在购买记录的交易份额为0的情况，下一次处理赎回记录时不可再将为0的记录赎回
+3、需要根据赎回交易的日期时间找到相应的一条购买记录的位置
+4、需要根据赎回记录的指定合同号找到对应的一条购买记录的位置
+
+测试
+===
+pytest -s -v -k test_xxx(函数名) tests/test_purchase.py

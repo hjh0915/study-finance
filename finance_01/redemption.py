@@ -3,18 +3,18 @@
 # 3、写好赎回的四种方法（函数）
 
 class Redemption:
-    def __init__(self, netCode, tranDate, tranTime, contractCode, 
-                    otherNumber, productCode, tranShare, tranCode, redNumber, purchaseCode):
-        self.netCode = netCode
-        self.tranDate = tranDate
-        self.tranTime = tranTime
-        self.contractCode = contractCode
-        self.otherNumber = otherNumber
-        self.productCode = productCode
-        self.tranShare = tranShare
-        self.tranCode = tranCode
-        self.redNumber = redNumber
-        self.purchaseCode = purchaseCode
+    def __init__(self, OrganCode, TradeDate, TradeTime, ApplicationCode, TaCode, 
+                    ProdCode, TradeQuot, TradeCode, RegeemSequence, AppiontApplicationCode):
+        self.OrganCode = OrganCode
+        self.TranDate = TranDate
+        self.TranTime = TranTime
+        self.ApplicationCode = ApplicationCode
+        self.TaCode = TaCode
+        self.ProdCode = ProdCode
+        self.TradeQuot = TradeQuot
+        self.TradeCode = TradeCode
+        self.RegeemSequence = RegeemSequence
+        self.AppiontApplicationCode = AppiontApplicationCode
 
     # 指定赎回
     def assign_back(self):

@@ -1,16 +1,37 @@
 package entities;
 
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.*;
 
 public class Purchase {
     String organCode;
-	Date tranDate;
+	LocalDate tranDate;
 	String tranTime;
 	String applicationCode;
 	String taCode;
 	String prodCode;
-	double tradeQuot;
+	BigDecimal tradeQuot;
 	String tradeCode;
+
+	public Purchase(
+		String organCode, 
+		LocalDate tranDate, 
+		String tranTime, 
+		String applicationCode,
+		String taCode,
+		String prodCode,
+		BigDecimal tradeQuot,
+		String tradeCode
+		) {
+			this.organCode = organCode;
+			this.tranDate = tranDate;
+			this.tranTime = tranTime;
+			this.applicationCode = applicationCode;
+			this.taCode = taCode;
+			this.prodCode = prodCode;
+			this.tradeQuot = tradeQuot;
+			this.tradeCode = tradeCode;
+		}
 	
 	public String getOrganCode() {
 		return organCode;
@@ -19,10 +40,10 @@ public class Purchase {
 		this.organCode = organCode;
 	}
 
-	public Date getTranDate() {
+	public LocalDate getTranDate() {
 		return tranDate;
 	}
-	public void setTranDate(Date tranDate) {
+	public void setTranDate(LocalDate tranDate) {
 		this.tranDate = tranDate;
 	}
 
@@ -54,10 +75,10 @@ public class Purchase {
 		this.prodCode = prodCode;
 	}
 
-	public double getTradeQuot() {
+	public BigDecimal getTradeQuot() {
 		return tradeQuot;
 	}
-	public void setTradeQuot(double tradeQuot) {
+	public void setTradeQuot(BigDecimal tradeQuot) {
 		this.tradeQuot = tradeQuot;
 	}
 
@@ -67,3 +88,4 @@ public class Purchase {
 	public void setTradeCode(String tradeCode) {
 		this.tradeCode = tradeCode;
 	}
+}

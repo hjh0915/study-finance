@@ -1,8 +1,10 @@
 package service;
 
 import entities.*;
+import java.util.List;
 
 public interface PurchaseService {
+    List<Purchase> getPurchases();
     void sort();  
     void append(Purchase p);
     void clean();

@@ -2,7 +2,7 @@ package finance02;
 
 import java.io.IOException;
 
-import entities.Purchase;
+import entities.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -47,17 +47,77 @@ public class App {
             new BigDecimal(50000.00),
             "603302"
         );
+
+        Redeem r1 = new Redeem(
+            "36015828", 
+            LocalDate.of(2018, 2, 27),
+            "141759", 
+            "180225710987050869", 
+            "710910010742065",
+            "1300099C89",
+            new BigDecimal(50000.00),
+            "603302",
+            1,
+            "171020710975085783"
+        );
+
+        Redeem r2 = new Redeem(
+            "36015828", 
+            LocalDate.of(2018, 2, 27), 
+            "141759", 
+            "180225710987050869", 
+            "710910010742065",
+            "1300099C89",
+            new BigDecimal(80000.00),
+            "603302",
+            2,
+            "171020710975085783"
+        );
+
+        Redeem r3 = new Redeem(
+            "36015828", 
+            LocalDate.of(2018, 2, 27), 
+            "141759", 
+            "180225710987050869", 
+            "710910010742065",
+            "1300099C89",
+            new BigDecimal(80000.00),
+            "603302",
+            3,
+            "171020710975085783"
+        );
+
+        Redeem r4 = new Redeem(
+            "36015828", 
+            LocalDate.of(2018, 2, 27), 
+            "141759", 
+            "180225710987050869", 
+            "710910010742065",
+            "1300099C89",
+            new BigDecimal(120000.00),
+            "603302",
+            4,
+            "171020710975085783"
+        );
+
         purchases.add(p1);
         purchases.add(p2);
         purchases.add(p3);
 
         PurchaseService pService = new PurchaseServiceImpl(purchases);
         pService.sort();
-
+        // pService.minus1(r1);
+        // pService.minus2(r2);
+        // pService.minus3(r3);
+        pService.minus4(r4);
         List<Purchase> ps = pService.getPurchases();
-
         for(Purchase p: ps) {
-            System.out.println(p.getTranDate());
+            System.out.println(p.getTradeQuot());
+        }
+
+        List<Purchase> nps = pService.clean(ps);
+        for(Purchase p: nps) {
+            System.out.println(p.getTradeQuot());
         }
     }
 }

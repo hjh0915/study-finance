@@ -104,6 +104,25 @@ public class PurchaseTest {
         );
         PurchaseService pService = new PurchaseServiceImpl(purchases);
         int i = pService.findApplicationCodeIndex(r);
-        assertEquals(0, i);
+        assertEquals(1, i);
+    }
+
+    @Test 
+    public void testMinus1() {
+        Redeem r = new Redeem(
+            "36015828", 
+            LocalDate.of(2018, 2, 27),
+            "141759", 
+            "180225710987050869", 
+            "710910010742065",
+            "1300099C89",
+            new BigDecimal(50000.00),
+            "603302",
+            1,
+            "171020710975085783"
+        );
+        PurchaseService pService = new PurchaseServiceImpl(purchases);
+        // pService.sort();
+        pService.minus1(r);
     }
 }

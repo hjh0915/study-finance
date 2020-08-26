@@ -9,15 +9,30 @@
 赎回方式
 -------
 1、指定赎回
+根据某次购买记录的合同号赎回，需要在赎回的属性中找到相应的购买合同号
 2、全部赎回
+将购买的所有理财产品一次性赎回，可不按顺序
 3、先进先出赎回
+根据每次购买记录的日期顺序，赎回先购买的理财产品
 4、后进先出赎回
+根据每次购买记录的日期顺序，赎回后购买的理财产品
 
 一个客户可以多次购买理财产品，但是每一笔赎回只针对一个理财产品的购买。
 需要针对一个购买产品，进行四种不同方式的赎回分析。
 
-赎回属性类型
--------
+购买属性及类型
+------------
+OrganCode
+TranDate                datetime
+TranTime                string
+ApplicationCode
+TaCode
+ProdCode
+TradeQuot               Decimal
+TradeCode
+
+赎回属性及类型
+------------
 OrganCode
 TranDate                datetime
 TranTime                string
